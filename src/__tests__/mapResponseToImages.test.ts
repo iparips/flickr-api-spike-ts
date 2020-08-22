@@ -1,4 +1,4 @@
-import {FlickrResponse, Image} from "../../types";
+import {FlickrResponse, Image} from "../types";
 import {buildResponse, buildResponseItem} from "./buildResponse";
 import {mapResponseToImages} from "../mapResponseToImages";
 

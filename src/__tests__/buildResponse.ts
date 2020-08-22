@@ -1,4 +1,4 @@
-import {FlickrItem, FlickrResponse} from "../../types";
+import {FlickrItem, FlickrResponse} from "../types";
 
 export const buildResponseItem = (overrides: Partial<FlickrItem> = {}): FlickrItem => {
     return {

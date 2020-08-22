@@ -1,4 +1,4 @@
-import {FlickrItem, FlickrResponse, Image} from "../types";
+import {FlickrItem, FlickrResponse, Image} from "./types";
 
 const inferLargeImageLink = (thumbnailLink: string): string => {
     return '';

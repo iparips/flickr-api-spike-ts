@@ -14,7 +14,7 @@ export const FormView = ({setSearchTerm, searchTerm}: PropTypes) => {
 
     return <form className="searchBox">
         <label className="searchBox__label" htmlFor="searchTerm">Image search</label>
-        <input type="text" name="searchTerm" id={searchTerm} value={searchTerm}
+        <input type="text" name="searchTerm" id="searchTerm" value={searchTerm}
                onChange={onChange}/>
     </form>
 };

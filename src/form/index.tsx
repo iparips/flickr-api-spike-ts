@@ -1,9 +1,9 @@
 import React, {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import fetchJsonp from 'fetch-jsonp';
 import {Image} from "../types";
-import {mapResponseToImages} from "../mapper/mapResponseToImages";
+import {mapResponseToImages} from "../mapResponseToImages";
 import {useDebounce} from 'use-debounce';
-import {FormView} from "./Form";
+import {FormView} from "./FormView";
 
 const FLICKR_PUBLIC_FEED_URL = 'https://www.flickr.com/services/feeds/photos_public.gne?format=json';
 
