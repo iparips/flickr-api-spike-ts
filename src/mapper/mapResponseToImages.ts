@@ -7,8 +7,10 @@ const inferLargeImageLink = (thumbnailLink: string): string => {
 const mapFlickrItemToImage = ({author, media, tags}: FlickrItem): Image => {
     return {
         author,
+        width: 1,
+        height: 1,
         tags: tags.split(' '),
-        thumbnailLink: media.m,
+        src: media.m,
         largeImageLink: inferLargeImageLink(media.m)
     }
 };

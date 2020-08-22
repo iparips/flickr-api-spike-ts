@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Form} from "./components/Form";
 import {Image} from "./types";
-import {Images} from "./components/Images";
+import Gallery from "react-photo-gallery";
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     return (
         <div className="App">
             <Form setSearchResults={setSearchResults}/>
-            <Images images={searchResults}/>
+            <Gallery photos={searchResults} />
         </div>
     );
 }

@@ -9,7 +9,9 @@ export type FlickrResponse = {
 };
 
 export type Image = {
-    thumbnailLink: string,
+    src: string,
+    width: number,
+    height: number,
     largeImageLink: string
     author: string,
     tags: string[],

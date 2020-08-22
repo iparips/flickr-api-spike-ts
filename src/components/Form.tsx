@@ -11,7 +11,7 @@ type PropTypes = {
 
 export const Form = ({setSearchResults}: PropTypes) => {
 
-    const [searchTerm, setSearchTerm] = useState<string>('');
+    const [searchTerm, setSearchTerm] = useState<string>('cats');
 
     useEffect(() => {
         const url = `${FLICKR_PUBLIC_FEED_URL}&tags=${encodeURI(searchTerm)}`;
@@ -23,7 +23,7 @@ export const Form = ({setSearchResults}: PropTypes) => {
             });
     }, [searchTerm]);
 
-    return <form>
+    return <form className="searchBox">
         <input type="text" name="searchTerm"
                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}/>
     </form>

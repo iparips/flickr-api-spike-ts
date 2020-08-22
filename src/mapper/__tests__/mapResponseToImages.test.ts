@@ -36,7 +36,7 @@ describe('mapResponseToImages', () => {
 
     it('maps thumbnail link', () => {
         const image: Image = mapResponseToImages(response)[0];
-        expect(image.thumbnailLink).toEqual(thumbnailLink);
+        expect(image.src).toEqual(thumbnailLink);
     });
 
 });
