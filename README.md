@@ -19,7 +19,7 @@
     - media: {m: string},
     - tags: string
 - I'm not putting emphasis on tests here, because the requirements did not say the interviewers are looking for tests. I added minimal testing for what I see as critical.
-
+- My background is backend, tdd, and not html / css styling, hence I used an off the shelf library to render the gallery
 
 ## Notes
 
