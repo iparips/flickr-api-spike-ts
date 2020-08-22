@@ -24,7 +24,9 @@ export const Form = ({setSearchResults}: PropTypes) => {
     }, [searchTerm]);
 
     return <form className="searchBox">
-        <input type="text" name="searchTerm"
+        <label className="searchBox__label" htmlFor="searchTerm">Image search</label>
+        <input type="text" name="searchTerm" id={searchTerm}
                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}/>
+
     </form>
 };
