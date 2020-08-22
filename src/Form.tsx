@@ -1,17 +1,24 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, Dispatch, SetStateAction, useEffect, useState} from 'react';
 import fetchJsonp from 'fetch-jsonp';
+import {Image} from "./types";
+import {mapResponseToImages} from "./mapResponseToImages";
 
 const FLICKR_PUBLIC_FEED_URL = 'https://www.flickr.com/services/feeds/photos_public.gne?tags=cats&format=json';
 
-export const Form = () => {
+type PropTypes = {
+    setSearchResults: Dispatch<SetStateAction<Image[]>>
+};
+
+export const Form = ({setSearchResults}: PropTypes) => {
 
     const [searchTerm, setSearchTerm] = useState<string>('');
 
     useEffect(() => {
         fetchJsonp(FLICKR_PUBLIC_FEED_URL, {jsonpCallback: 'jsoncallback'})
             .then(async res => {
-                const x = await res.json()
-                console.log(x);
+                const responseJson = await res.json();
+                const images: Image[] = mapResponseToImages(responseJson);
+                setSearchResults(images);
             });
     }, [searchTerm]);
 
