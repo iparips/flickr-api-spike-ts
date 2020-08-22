@@ -1,11 +1,11 @@
-## Coding Test Instructions
+## Instructions
 
 Follow the instructions exactly as they are asked (this is critically important)
 Functionality for the end-user is key here. Ask yourself, is this easy to use? 
 Make sure the search function works (a few people have failed on this aspect)
 Please use JSONP as requested as it won't work as well with JSON.
 
-## How to Apply (Basic Coding Task)
+## Basic Task
 
 Carefully follow the instructions and produce your own original work:
 

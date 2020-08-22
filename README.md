@@ -1,4 +1,4 @@
-# Sargon Coding Test
+# Flickr API Spike
 
 ## Process
 
