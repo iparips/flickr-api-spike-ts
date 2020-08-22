@@ -1,8 +1,19 @@
 import React from 'react';
-import {Image} from "../types";
+import {Image as ImageType} from "../types";
 
-export const Images = ({images}: {images: Image[]}) => {
-    return <pre>
-            {JSON.stringify(images, null, 2)}
-        </pre>;
+const Image = ({image}: { image: ImageType }) => {
+    return <div>
+        <img src={image.thumbnailLink}/>
+        <p>Author: {image.author}</p>
+        <p>Tags: {image.tags}</p>
+    </div>;
+}
+
+export const Images = ({images}: { images: ImageType[] }) => {
+    return <>
+        {
+            images.map((image, index) =>
+                <Image image={image} key={index.toString()}/>)
+        }
+    </>;
 }
