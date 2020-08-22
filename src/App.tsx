@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Form} from "./Form";
+import {Form} from "./components/Form";
 import {Image} from "./types";
 
 function App() {

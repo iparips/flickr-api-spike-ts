@@ -1,7 +1,7 @@
 import React, {ChangeEvent, Dispatch, SetStateAction, useEffect, useState} from 'react';
 import fetchJsonp from 'fetch-jsonp';
-import {Image} from "./types";
-import {mapResponseToImages} from "./mapResponseToImages";
+import {Image} from "../types";
+import {mapResponseToImages} from "../mapper/mapResponseToImages";
 
 const FLICKR_PUBLIC_FEED_URL = 'https://www.flickr.com/services/feeds/photos_public.gne?tags=cats&format=json';
 

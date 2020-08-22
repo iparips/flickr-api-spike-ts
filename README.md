@@ -9,6 +9,12 @@
     - https://github.com/gndplayground/flickr-public-feed/blob/69ae0f09edbb2fac95c2bff037ecde291bb2c7de/src/pages/Home.jsx
 - [ ] Build a container component that does the data fetch
 
+## Assumptions
+- For the sake of simplicity, I assume Flickr always returns the following fields inside each item of the response:
+    - author: string,
+    - media: {m: string},
+    - tags: string
+
 ## Notes
 
 ### Flickr image url structure [3]
