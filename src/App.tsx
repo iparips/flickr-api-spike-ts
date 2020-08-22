@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Form} from "./components/Form";
 import {Image} from "./types";
+import {Images} from "./components/Images";
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     return (
         <div className="App">
             <Form setSearchResults={setSearchResults}/>
-            {/*<Results date={searchResults}/>*/}
+            <Images images={searchResults}/>
         </div>
     );
 }
