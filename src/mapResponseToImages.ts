@@ -5,7 +5,7 @@ const mapFlickrItemToImage = ({author, media, tags}: FlickrItem): Image => {
         author,
         // Hard-coding dimensions of images below as a shortcut
         // to meet the requirements of react-photo-gallery dependency
-        // to make the presentation of images look ok.
+        // and to make the presentation of images look ok.
         // Although whether they actually look ok is arguable
         // because these are not true dimensions of the images,
         // so some stretching does take place.
