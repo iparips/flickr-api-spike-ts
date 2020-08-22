@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './css/App.css';
-import {Form} from "./components/Form";
+import {Form} from "./form";
 import {Image} from "./types";
 import Gallery from "react-photo-gallery";
 
