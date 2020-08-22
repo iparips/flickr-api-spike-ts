@@ -21,3 +21,4 @@
 - My background is more of backend development than front end styling hence I used an off the shelf library to render the gallery. Sadly it did not allow to easily add text to the images, and I did not have more time this weekend implement the rendering with text exactly as the task specified. Instead, I demonstrated writing some unit tests which is more in line with my strengths. I believe they are core to code quality.
 - I split the form to follow container / component pattern to simplify code. This way the view component is focused on presentation, while container component is focused on data fetching. 
 - I use builder pattern for test data generation, to reduce duplication in tests, and allow for test data customisation.
+- For simplicity' sake I did not wrap my search box input into an HTML form to prevent default from behaviours such as submit on press of Enter
