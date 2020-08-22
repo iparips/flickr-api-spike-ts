@@ -8,13 +8,12 @@ type PropTypes = {
 export const FormView = ({setSearchTerm, searchTerm}: PropTypes) => {
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
         setSearchTerm(e.target.value);
     };
 
-    return <form className="searchBox">
+    return <div className="searchBox">
         <label className="searchBox__label" htmlFor="searchTerm">Image search</label>
-        <input type="text" name="searchTerm" id="searchTerm" value={searchTerm}
+        <input type="text" id="searchTerm" value={searchTerm}
                onChange={onChange}/>
-    </form>
+    </div>
 };
