@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+import './css/App.css';
 import {Form} from "./components/Form";
 import {Image} from "./types";
 import Gallery from "react-photo-gallery";
