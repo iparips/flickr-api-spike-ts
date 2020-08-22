@@ -1,28 +1,18 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
+import fetchJsonp from 'fetch-jsonp';
 
-const FLICKR_PUBLIC_FEED_URL = 'https://www.flickr.com/services/feeds/photos_public.gne?tags=cats&jsoncallback=getFlickrData&format=json';
+const FLICKR_PUBLIC_FEED_URL = 'https://www.flickr.com/services/feeds/photos_public.gne?tags=cats&format=json';
 
 export const Form = () => {
 
-    const handleData = (data: any) => {
-        alert(data);
-    };
-
     const [searchTerm, setSearchTerm] = useState<string>('');
 
-    // @ts-ignore
-    window.getFlickrData = (data) => {
-        handleData(data);
-    };
-
     useEffect(() => {
-        const cb = document.getElementById('callback');
-        if (cb) {cb.remove();}
-        const s = document.createElement('script');
-        s.id = 'callback';
-        s.type = 'text/javascript';
-        s.src = `https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=getFlickrData&format=json&tags=${searchTerm.split(' ').join(',')}&tagmode=any`;
-        document.getElementsByTagName('head')[0].appendChild(s);
+        fetchJsonp(FLICKR_PUBLIC_FEED_URL, {jsonpCallback: 'jsoncallback'})
+            .then(async res => {
+                const x = await res.json()
+                console.log(x);
+            });
     }, [searchTerm]);
 
     return <form>

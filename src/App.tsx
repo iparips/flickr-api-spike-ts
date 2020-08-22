@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {Form} from './Form';
-import {Results} from './Results';
 import './App.css';
+import {Form} from "./Form";
 
 function App() {
 
@@ -9,7 +8,7 @@ function App() {
 
     return (
         <div className="App">
-            <Form />
+            <Form/>
             {/*<Results date={searchResults}/>*/}
         </div>
     );
