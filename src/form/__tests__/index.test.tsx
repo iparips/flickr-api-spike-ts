@@ -25,8 +25,8 @@ describe('Form/index', () => {
     }
 
     beforeEach(() => {
-        // Fake timers are required to because of debounce, which waits
-        // 100ms before updating the search results
+        // Fake timers are required to because I used debounce in the component,
+        // which waits 100ms before updating the search results.
         clock = FakeTimers.install({
             now: new Date('1995-12-17T03:24:00')
         });
