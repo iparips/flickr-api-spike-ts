@@ -2,12 +2,14 @@
 
 ## Process
 
-- [ ] Get Flickr API key
-- [ ] Work out what is the request format to search Flickr images:
+- [x] Work out what is the request format to search Flickr images:
     - `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=<key>&format=json&nojsoncallback=1&text=cats`[1]
     - Or the public feed with tag based search: https://www.flickr.com/services/feeds/photos_public.gne?tags=cats&format=json&nojsoncallback=1
     - https://github.com/gndplayground/flickr-public-feed/blob/69ae0f09edbb2fac95c2bff037ecde291bb2c7de/src/pages/Home.jsx
-- [ ] Build a container component that does the data fetch
+- [x] Build a component that fetches data on user input
+- [ ] Map fields into internal format for ease of rendering (excluding inferring large image link)
+- [ ] Render the results
+- [ ] Implement viewing large images 
 
 ## Assumptions
 - For the sake of simplicity, I assume Flickr always returns the following fields inside each item of the response:
