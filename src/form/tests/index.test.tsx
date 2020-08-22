@@ -8,7 +8,7 @@ jest.mock('use-debounce', () => ({
 }));
 jest.mock('fetch-jsonp');
 import fetchJsonp from 'fetch-jsonp';
-import {buildResponse, buildResponseItem} from "../../__tests__/buildResponse";
+import {buildResponse, buildResponseItem} from "../../tests/buildResponse";
 import {Image} from "../../types";
 
 describe('Form/index', () => {
