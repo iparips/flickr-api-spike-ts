@@ -10,6 +10,8 @@
 - [ ] Map fields into internal format for ease of rendering (excluding inferring large image link)
 - [ ] Render the results
 - [ ] Implement viewing large images 
+- [ ] Add debounce for when user inputs text to avoid jittery experience
+- [ ] How to useCallback with use State?
 
 ## Assumptions
 - For the sake of simplicity, I assume Flickr always returns the following fields inside each item of the response:
