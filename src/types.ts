@@ -12,7 +12,6 @@ export type Image = {
     src: string,
     width: number,
     height: number,
-    largeImageLink: string
     author: string,
     tags: string[],
 };

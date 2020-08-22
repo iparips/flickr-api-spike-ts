@@ -1,9 +1,5 @@
 import {FlickrItem, FlickrResponse, Image} from "./types";
 
-const inferLargeImageLink = (thumbnailLink: string): string => {
-    return '';
-};
-
 const mapFlickrItemToImage = ({author, media, tags}: FlickrItem): Image => {
     return {
         author,
@@ -11,7 +7,6 @@ const mapFlickrItemToImage = ({author, media, tags}: FlickrItem): Image => {
         height: 1,
         tags: tags.split(' '),
         src: media.m,
-        largeImageLink: inferLargeImageLink(media.m)
     }
 };
 
