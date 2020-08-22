@@ -1,5 +1,15 @@
 # Flickr API Spike
 
+This small project allows searching of twitter public feed by tags. Input tags in the search box, and see the matching images displayed in a grid.
+
+It is developed using create-react-app typescript.
+
+## Usage Instructions
+
+- Install dependencies: `npm i` 
+- Run tests `npm test`
+- Start the app `npm start` This will open a browser window with the app at: http://localhost:3000/
+
 ## Process
 
 - [x] Work out which flickr API endpoint to invoke
