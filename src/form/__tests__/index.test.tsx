@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {mount, ReactWrapper} from 'enzyme';
 import {Form} from '../index';
 import FakeTimers, {InstalledClock} from "@sinonjs/fake-timers";
@@ -8,18 +8,36 @@ jest.mock('use-debounce', () => ({
 }));
 jest.mock('fetch-jsonp');
 import fetchJsonp from 'fetch-jsonp';
+import {buildResponse, buildResponseItem} from "../../__tests__/buildResponse";
+import {Image} from "../../types";
 
 describe('Form/index', () => {
     let form: ReactWrapper;
     let clock: InstalledClock;
+    let setSearchResults: Dispatch<SetStateAction<Image[]>>;
+    const imageUrl = "image url";
+
+    const typeSearchTerm = (form: ReactWrapper, term: string) => {
+        form.find("input#searchTerm").simulate('change', {
+            target: {value: term}
+        });
+        clock.tick(200);
+    }
 
     beforeEach(() => {
+        // Fake timers are required to because of debounce, which waits
+        // 100ms before updating the search results
         clock = FakeTimers.install({
             now: new Date('1995-12-17T03:24:00')
         });
-        const setSearchResults = jest.fn();
+        setSearchResults = jest.fn();
+        const responseItem = buildResponseItem({
+            media: { m: imageUrl}
+        });
         // @ts-ignore
-        fetchJsonp.mockImplementation(() => Promise.resolve());
+        fetchJsonp.mockImplementation(() => Promise.resolve({
+            json: () => buildResponse([responseItem])
+        }));
         form = mount(<Form setSearchResults={setSearchResults}/>);
     });
 
@@ -28,20 +46,23 @@ describe('Form/index', () => {
     });
 
     it('calls fetch with search term', () => {
-        form.find("input#searchTerm").simulate('change', {
-            target: {value: 'Hello'}
-        });
-
-        clock.tick(200);
-        form.update();
-
+        typeSearchTerm(form,"Hello");
         expect(fetchJsonp).toHaveBeenLastCalledWith(
             expect.stringContaining('tags=Hello'), expect.anything()
         );
     });
 
+    // This is an integration style test proving that mapResponseToImages
+    // has been called by checking one of the mapped fields is passed through
+    // to setSearchResults. The complete detail of the mapping is checked in
+    // the mapper test.
     it('maps response and sets search results', () => {
-
+        typeSearchTerm(form,"Hello");
+        expect(setSearchResults).toHaveBeenCalledWith(
+            expect.arrayContaining(
+                [expect.objectContaining({src: imageUrl})]
+            )
+        );
     });
 
 });
