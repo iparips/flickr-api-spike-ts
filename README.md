@@ -16,6 +16,8 @@
     - author: string,
     - media: {m: string},
     - tags: string
+- I'm not putting emphasis on tests here, because the requirements did not say the interviewers are looking for tests. I added minimal testing for what I see as critical.
+
 
 ## Notes
 
